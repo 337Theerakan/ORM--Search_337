@@ -6,8 +6,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SalesSystemController;
 use Inertia\Inertia;
 use App\Http\Controllers\RoomSysController;
+use App\Http\Controllers\RegistrationSystemController;
 
-
+//registration
+Route::get('/registration', [RegistrationSystemController::class, 'index'])
+    ->name('registration.index');
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
