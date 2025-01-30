@@ -18,6 +18,7 @@ class Course extends Model
 
     public function registers()
     {
+    
         return $this->hasMany(Register::class);
     }
 }

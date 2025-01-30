@@ -12,11 +12,18 @@ class SalesSystemController extends Controller
 {
     public function index()
     {
+        // แสดงข้อมูลลูกค้าทั้งหมด
         Log::debug('Sales System index is called.');
 
+        // ดึงข้อมูลลูกค้าทั้งหมด
         $customers = Customer::all();
+        // ดึงข้อมูลสินค้าทั้งหมด
+
         $products = Product::all();
+        // ดึงข้อมูลใบสั่งซื้อทั้งหมด
+
         $orders = Order::with('orderDetails.product')->get();
+        // นับจำนวนใบสั่งซื้อของลูกค้าแต่ละคน
 
         $customerOrderCount = $customers->map(function ($customer) {
             return [
@@ -32,6 +39,8 @@ class SalesSystemController extends Controller
             'orders_count' => $orders->count(),
             'customerOrderCount' => $customerOrderCount->toArray(),
         ]);
+
+        // ส่งข้อมูลไปแสดงผลที่หน้า SalesSystem/Index
 
         return Inertia::render('SalesSystem/Index', [
             'customers' => $customers,

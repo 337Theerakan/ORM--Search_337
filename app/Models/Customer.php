@@ -17,5 +17,6 @@ class Customer extends Model
     {
         return $this->hasMany(Order::class);
          // กำหนดความสัมพันธ์กับตาราง orders โดยมีคีย์เชื่อมระหว่าง customers.id กับ orders.customer_id
+         //hasMany คือ ความสัมพันธ์แบบ 1 to Many คือ 1 ลูกค้าสามารถมีหลายใบสั่งซื้อ
     }
 }

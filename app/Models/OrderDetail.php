@@ -16,6 +16,7 @@ class OrderDetail extends Model
     public function order()
     {
         return $this->belongsTo(Order::class); // OrderDetail belongs to Order (order_id)
+        //belongsTo คือ ความสัมพันธ์แบบ Many to 1 คือ หลายรายการสินค้าสามารถมีใบสั่งซื้อเดียวกัน
         // กำหนดความสัมพันธ์กับตาราง orders โดยมีคีย์เชื่อมระหว่าง order_details.order_id กับ orders.id
     }
 
