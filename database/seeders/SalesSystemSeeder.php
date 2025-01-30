@@ -26,3 +26,5 @@ class SalesSystemSeeder extends Seeder
         });
     }
 }
+
+// php artisan db:seed --class=SalesSystemSeeder

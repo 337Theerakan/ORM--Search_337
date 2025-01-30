@@ -30,3 +30,5 @@ class StudentRegistrationSeeder extends Seeder
         ]);
     }
 }
+
+// // php artisan db:seed --class=StudentRegistrationSeeder
